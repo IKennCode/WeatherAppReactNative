@@ -5,10 +5,14 @@ import React from "react";
 //import core component for react native
 import { View, Text, SafeAreaView, StyleSheet, Platform } from "react-native";
 
+//imported icon
+import { Feather } from '@expo/vector-icons';
+
 
 const App = () => {
   return (
     <SafeAreaView style={styles.wrapper}>
+      <Feather name="sun" size={24} color="black" />
       <View style={styles.container}>
        
         <Text style={styles.temp}>6</Text>
