@@ -1,22 +1,34 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+//First thing to do when creating a component is to import React from react
+//Trivia: SafeAreaView is used to make your application responsive for different devices
+import React from "react";
 
-export default function App() {
+//import core component for react native
+import { View, Text, SafeAreaView, StyleSheet } from "react-native";
 
 
+const App = () => {
   return (
-    <View style={{backgroundColor: 'orange'}}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
+    <SafeAreaView style={styles.droidSafeArea}>
+      <View style={styles.container}>
+        <Text>Current Weather ffsdfsdfsdfsd</Text>
+      </View>
+    </SafeAreaView>
+    
+  )
+
 }
 
 const styles = StyleSheet.create({
-  container: {
+  droidSafeArea: {
     flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+    
+    paddingTop: Platform.OS === 'android' ? 50 : 0
+},
+  container: {
+    backgroundColor: "pink",
+    flex: 1,
+    alignItems: "center"
+  }
+})
+
+export default App;
